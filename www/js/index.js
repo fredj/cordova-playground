@@ -1,16 +1,22 @@
-document.addEventListener('deviceready', function() {
+document.addEventListener('deviceready', () => {
+  const config = {
+    clientId: 'io.fredj.playground'
+  };
 
-  var map = new ol.Map({
-    layers: [
-      new ol.layer.Tile({
-        source: new ol.source.OSM()
+  FingerprintAuth.encrypt(config, result => {
+    //alert(result.token);
+    const map = new ol.Map({
+      layers: [
+        new ol.layer.Tile({
+          source: new ol.source.OSM()
+        })
+      ],
+      target: 'map',
+      view: new ol.View({
+        center: [0, 0],
+        zoom: 2
       })
-    ],
-    target: 'map',
-    view: new ol.View({
-      center: [0, 0],
-      zoom: 2
-    })
+    });
   });
 
 }, false);

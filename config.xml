@@ -24,4 +24,5 @@
     <allow-intent href="itms-apps:*" />
   </platform>
   <engine name="android" spec="~6.1.2" />
+  <plugin name="cordova-plugin-android-fingerprint-auth" spec="~1.2.5" />
 </widget>
