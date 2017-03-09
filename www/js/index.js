@@ -4,7 +4,7 @@ document.addEventListener('deviceready', () => {
   };
 
   FingerprintAuth.encrypt(config, result => {
-    //alert(result.token);
+    navigator.notification.alert(result.token);
     const map = new ol.Map({
       layers: [
         new ol.layer.Tile({
